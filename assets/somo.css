@@ -107,6 +107,19 @@ strong, b { font-weight: 600; }
 .section--dark { background: var(--footer-bg); color: var(--footer-ink); }
 .rule { border: 0; border-top: 1px solid var(--line); }
 .section--dark .rule { border-color: var(--footer-line); }
+
+/* Alternating section backgrounds — roughly 50/50 mint-green and white down the
+   page. Sections strictly alternate (the <hr> rule dividers between them are not
+   <section> elements, so they do not affect parity), and the first section on
+   every page is the hero, which stays on paper. Within green sections the
+   hairline and mint-panel tokens shift to a dark tint so borders and bordered
+   grids stay visible against the green. Background only — no layout change. */
+main > section:nth-of-type(even) {
+  background: var(--green);
+  --line: rgba(23,23,25,.14);
+  --line-strong: rgba(23,23,25,.26);
+  --paper-2: var(--paper-3);
+}
 .stack > * + * { margin-top: 1rem; }
 .measure { max-width: 62ch; }
 .measure-narrow { max-width: 46ch; }
