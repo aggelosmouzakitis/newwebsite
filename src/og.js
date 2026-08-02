@@ -18,7 +18,7 @@ const esc = (s) => String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').
 
 function ogContent(t, page) {
   switch (page) {
-    case 'home': return { kicker: t.home.hero.eyebrow, title: t.htmlLang === 'el' ? 'Ομαδικές εμπειρίες που ξεκινούν από το σώμα' : 'Group experiences that start with the body', sub: '' };
+    case 'home': return { kicker: t.home.hero.eyebrow, title: t.htmlLang === 'el' ? 'Ένας χώρος για κίνηση, παρουσία και σύνδεση' : 'A space for movement, presence and connection', sub: '' };
     case 'circles': return { kicker: t.products.circles.kind, title: 'Somo Circles', sub: t.products.circles.oneLiner };
     case 'flow': return { kicker: t.products.flow.kind + ' · ' + t.common.soon, title: 'Somo Flow', sub: t.products.flow.oneLiner };
     case 'outdoors': return { kicker: t.products.outdoors.kind, title: 'Somo Outdoors', sub: t.products.outdoors.oneLiner };

@@ -88,7 +88,7 @@ function home(ctx) {
   </div>`);
 
   const about = S(`<div class="founder">
-    <div class="founder__photo"><img src="${config.basePath}/assets/img/aggelos.jpg" width="600" height="750" alt="${attr(t.about.photoAlt)}" loading="lazy"></div>
+    <div class="founder__photo"><img src="${config.basePath}/assets/img/anastasia.jpg" width="600" height="750" alt="${attr(t.about.photoAlt)}" loading="lazy"></div>
     <div>
       <p class="eyebrow">${e(t.about.eyebrow)}</p>
       <h2 class="h2" style="margin-top:16px">${e(t.about.title)}</h2>
@@ -435,7 +435,7 @@ function organisations(ctx) {
 /* ============================ ABOUT ====================================== */
 function about(ctx) {
   const t = ctx.t.about;
-  const P = ctx.paths;
+
   const hero = `<section class="pagehero section--tight"><div class="container"><div class="reveal">
     <p class="eyebrow">${e(t.hero.eyebrow)}</p>
     <h1 class="display" style="margin-top:18px">${e(t.hero.h1)}</h1>
@@ -447,23 +447,27 @@ function about(ctx) {
     <div class="prose">${t.origin.body.map((p) => `<p>${e(p)}</p>`).join('')}</div>
   </div>`);
 
-  const founder = S(`<div class="founder">
-    <div class="founder__photo"><img src="${config.basePath}/assets/img/aggelos.jpg" width="600" height="750" alt="${attr(t.founder.photoAlt)}" loading="lazy"></div>
+  // Two coherent people blocks in one section (same background): the founder
+  // (photo left) and the Somo Circles facilitator (photo right, mirrored).
+  const person = (data, img, reverse) => `<div class="founder${reverse ? ' founder--reverse' : ''}">
+    <div class="founder__photo"><img src="${config.basePath}/assets/img/${img}" width="600" height="750" alt="${attr(data.photoAlt)}" loading="lazy"></div>
     <div>
-      <p class="eyebrow">${e(t.founder.eyebrow)}</p>
-      <h2 class="h2" style="margin-top:16px">${e(t.founder.name)}</h2>
-      <div class="prose" style="margin-top:20px">${t.founder.body.map((p) => `<p>${e(p)}</p>`).join('')}</div>
+      <p class="eyebrow">${e(data.eyebrow)}</p>
+      <h2 class="h2" style="margin-top:14px">${e(data.name)}</h2>
+      <p class="label" style="margin-top:10px">${e(data.role)}</p>
+      <div class="prose" style="margin-top:20px">${data.body.map((p) => `<p>${e(p)}</p>`).join('')}</div>
     </div>
-  </div>`, { class: 'section--tight' });
+  </div>`;
 
-  const philosophy = S(
-    C.sectionHead({ eyebrow: t.philosophy.eyebrow, title: t.philosophy.title })
-    + C.numGrid(t.philosophy.points, 4));
+  const people = S(`<div class="people">
+    ${person(t.founder, 'anastasia.jpg', false)}
+    ${person(t.circles, 'aggelos.jpg', true)}
+  </div>`, { class: 'section--tight' });
 
   const finalCta = C.ctaBand(ctx, t.finalCta,
     C.lumaLink(ctx, 'allEvents', { label: ctx.t.common.viewExperiences, class: 'btn btn-orange', placement: 'about_final', analytics: 'luma_all_events_click' }));
 
-  return hero + rule() + origin + founder + rule() + philosophy + finalCta;
+  return hero + rule() + origin + people + finalCta;
 }
 
 /* ============================ SAFETY & FAQ =============================== */

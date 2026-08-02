@@ -102,9 +102,9 @@ module.exports = {
       ogAlt: "SOMO for organisations, teams, studios and communities.",
     },
     about: {
-      title: "About SOMO · Aggelos Mouzakitis",
-      description: "SOMO creates experiences where movement, body awareness and group interaction exist together. Created by Aggelos Mouzakitis, a mental health counsellor and group facilitator.",
-      ogAlt: "About SOMO and Aggelos Mouzakitis.",
+      title: "About SOMO · The story and the people",
+      description: "SOMO is a space for movement, presence and connection. Founded by Anastasia; Somo Circles are led by Aggelos.",
+      ogAlt: "About SOMO.",
     },
     safety: {
       title: "Safety and FAQ · SOMO",
@@ -127,8 +127,8 @@ module.exports = {
   home: {
     hero: {
       eyebrow: "SOMO · Small group experiences",
-      h1sr: "SOMO. Group experiences that start with the body",
-      lead: "Group experiences that start with the body. SOMO combines somatic shaking, movement, group reflection and outdoor activity, giving you space to notice what is happening in your body and how you relate to the people around you.",
+      h1sr: "SOMO. A space for movement, presence and connection",
+      lead: "SOMO is a space for movement, presence and connection. Away from screens and constant pressure, it creates experiences that bring us closer to the body, to nature and to other people.",
       loc: "Athens · In Greek and English",
       secondary: "See the experiences",
       meta: [
@@ -196,14 +196,14 @@ module.exports = {
       points: [],
     },
     about: {
-      eyebrow: "Who is behind SOMO",
-      title: "Created by Aggelos Mouzakitis",
+      eyebrow: "Behind SOMO",
+      title: "SOMO was founded by Anastasia",
       body: [
-        "Aggelos Mouzakitis is a mental health counsellor and group facilitator, with a professional background in product and technology.",
-        "SOMO grew from his interest in the relationship between the body, conversation and what happens when people meet inside a group.",
+        "SOMO was founded by Anastasia, to create experiences that take us away from screens and closer to the body and to nature.",
+        "Somo Circles are led by Aggelos and combine physical practice, reflection and group processing.",
       ],
-      cta: "Read more",
-      photoAlt: "Aggelos Mouzakitis, who created SOMO.",
+      cta: "The story of SOMO",
+      photoAlt: "Anastasia, the founder of SOMO.",
     },
     orgs: {
       eyebrow: "For organisations",
@@ -616,8 +616,8 @@ module.exports = {
   about: {
     hero: {
       eyebrow: "About",
-      h1: "Why SOMO was created",
-      lead: "SOMO creates experiences where movement, body awareness and group interaction can exist together.",
+      h1: "A space for movement, presence and connection",
+      lead: "SOMO began as an antidote to a life full of screens, pressure and constant mental activity. It makes space to return to the body, through movement, presence and shared experience.",
     },
     origin: {
       eyebrow: "The starting point",
@@ -629,27 +629,27 @@ module.exports = {
     },
     founder: {
       eyebrow: "The founder",
-      name: "Aggelos Mouzakitis",
-      photoAlt: "Aggelos Mouzakitis, who created SOMO.",
+      name: "Anastasia",
+      role: "Founder & Operations Lead",
+      photoAlt: "Anastasia, the founder of SOMO.",
       body: [
-        "Aggelos Mouzakitis is a mental health counsellor and group facilitator, with an MSc in Integrative Counselling and Psychotherapy.",
-        "He also has a professional background in product and technology, including work with founders and professionals managing demanding roles and significant responsibility.",
-        "SOMO combines his experience of group processes with his interest in body-based practices and the relationship between the body, thought and human interaction.",
+        "Anastasia founded SOMO after years in tech, looking for a more physical, creative and human way of living.",
+        "She is a dance instructor and is training as a yoga teacher. She leads the operations and the growth of SOMO.",
       ],
     },
-    philosophy: {
-      eyebrow: "The approach",
-      title: "Four practical principles",
-      points: [
-        { t: "The body provides information", d: "Physical sensations can help us notice parts of an experience that may not appear easily through thought." },
-        { t: "You remain in control", d: "You decide how much to take part and can adapt or stop a practice." },
-        { t: "The group is part of the experience", d: "The presence of other people can make patterns in how we relate, avoid or express ourselves more visible." },
-        { t: "The format should be clear", d: "Before taking part, you should understand what will happen and what choices you have." },
+    circles: {
+      eyebrow: "Somo Circles",
+      name: "Aggelos",
+      role: "Facilitator, Somo Circles",
+      photoAlt: "Aggelos, facilitator of Somo Circles.",
+      body: [
+        "Aggelos is an integrative psychotherapist and counsellor, with many years of experience in tech.",
+        "He leads Somo Circles, combining physical practice, reflection and group processing.",
       ],
     },
     finalCta: {
-      eyebrow: "Experiences",
-      title: "View upcoming experiences",
+      eyebrow: "Upcoming experiences",
+      title: "Discover the next SOMO experiences",
       text: "The schedule and booking links are available on Luma.",
     },
   },

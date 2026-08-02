@@ -520,9 +520,16 @@ a.card:hover, .card--link:hover { transform: translateY(-3px); box-shadow: 0 16p
 
 /* Founder / about media */
 .founder { display: grid; gap: clamp(24px,4vw,48px); align-items: center; }
-@media (min-width: 820px) { .founder { grid-template-columns: 300px 1fr; } }
+@media (min-width: 820px) {
+  .founder { grid-template-columns: 300px 1fr; }
+  /* Mirrored people block: photo on the right, text on the left. */
+  .founder--reverse { grid-template-columns: 1fr 300px; }
+  .founder--reverse .founder__photo { order: 2; }
+}
 .founder__photo { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--paper-2); }
 .founder__photo img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/5; }
+/* Two people blocks stacked in one section (About) */
+.people { display: grid; gap: clamp(52px, 7vw, 100px); }
 
 /* ------- CTA band --------------------------------------------------------- */
 .ctaband { }

@@ -59,10 +59,8 @@ function orgNode(siteUrl, t, lang) {
     description: t.meta.home.description,
     founder: {
       '@type': 'Person',
-      name: lang === 'el' ? 'Άγγελος Μουζακίτης' : 'Aggelos Mouzakitis',
-      jobTitle: lang === 'el'
-        ? 'Σύμβουλος ψυχικής υγείας, συντονιστής ομάδων'
-        : 'Mental health counsellor and group facilitator',
+      name: lang === 'el' ? 'Αναστασία' : 'Anastasia',
+      jobTitle: 'Founder & Operations Lead',
     },
   };
   const sameAs = Object.values(config.social).filter(Boolean);
@@ -103,9 +101,11 @@ function jsonldFor(lang, key, t, siteUrl) {
 function copyAssets() {
   const imgDir = path.join(ROOT, 'assets', 'img');
   mkdirp(imgDir);
-  // Real founder photo, bundled with the source (src/media/aggelos.jpg).
-  const src = path.join(ROOT, 'src', 'media', 'aggelos.jpg');
-  if (fs.existsSync(src)) fs.copyFileSync(src, path.join(imgDir, 'aggelos.jpg'));
+  // Real founder / facilitator photos, bundled with the source (src/media/*.jpg).
+  for (const photo of ['anastasia.jpg', 'aggelos.jpg']) {
+    const src = path.join(ROOT, 'src', 'media', photo);
+    if (fs.existsSync(src)) fs.copyFileSync(src, path.join(imgDir, photo));
+  }
   // Brand favicon (SVG). PNG variants are produced by scripts/og.js.
   const favicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><rect width="48" height="48" rx="9" fill="#171719"/><text x="24" y="34" font-family="Commissioner,Arial,sans-serif" font-size="30" font-weight="800" fill="#FCFCFC" text-anchor="middle">S</text><circle cx="37" cy="31" r="3.4" fill="#5A6CD0"/></svg>`;
   fs.writeFileSync(path.join(imgDir, 'favicon.svg'), favicon);
