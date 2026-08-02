@@ -346,7 +346,7 @@ ${analyticsSnippet}
 <link rel="icon" href="${config.basePath}/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="${config.basePath}/assets/img/favicon.png" sizes="48x48">
 <link rel="apple-touch-icon" href="${config.basePath}/assets/img/apple-touch-icon.png">
-<meta name="theme-color" content="#F2F1ED">
+<meta name="theme-color" content="#FCFCFC">
 <title>${e(head.title)}</title>
 <meta name="description" content="${attr(head.description)}">
 <link rel="canonical" href="${attr(ctx.canonical)}">

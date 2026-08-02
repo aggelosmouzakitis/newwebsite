@@ -1,8 +1,8 @@
 /* =============================================================================
    SOMO — design system
-   Editorial / human aesthetic: neutral stone background, one deep-indigo
-   accent, near-black ink, strong headings, monospace labels/metadata, sharp
-   1px borders, bordered meta grids, a dark footer. Restrained motion.
+   Editorial / human aesthetic: white background, mint-green section blocks,
+   one electric-blue accent, near-black ink, strong headings, monospace
+   labels/metadata, sharp 1px borders, bordered meta grids. Restrained motion.
 
    Typeface intent: Commissioner (navigation, buttons, headings, body, forms,
    cards) + Roboto Mono (dates, step numbers, small labels, compact metadata).
@@ -20,28 +20,29 @@ ul, ol { list-style: none; }
 
 /* ------- Tokens ----------------------------------------------------------- */
 :root {
-  /* Colour — neutral stone with a single deep-indigo accent */
-  --paper:        #F2F1ED;   /* stone page background */
-  --paper-2:      #E7E7E2;   /* slightly deeper panel / card fill */
-  --paper-3:      #FAF9F6;   /* lifted card fill */
-  --ink:          #171719;   /* near-black text */
-  --ink-2:        #45454B;   /* secondary text */
-  --muted:        #717078;   /* labels, meta */
-  --line:         #D2D1CC;   /* hairline border */
-  --line-strong:  #AAA9B0;   /* stronger border on hover / dividers */
-  --accent:       #4D478F;   /* indigo accent (brand) */
-  --accent-deep:  #38336D;   /* deep indigo (hover / emphasis) */
-  --accent-soft:  #DDD9F0;   /* soft indigo (restrained backgrounds / highlights) */
+  /* Colour — white base, mint-green sections, electric-blue accent */
+  --paper:        #FCFCFC;   /* default page background */
+  --paper-2:      #E7F7E1;   /* soft mint tint (raised panels, explain box) */
+  --paper-3:      #FFFFFF;   /* lifted card fill */
+  --ink:          #171719;   /* dark neutral text (unchanged) */
+  --ink-2:        #45454B;   /* secondary text (unchanged) */
+  --muted:        #717078;   /* labels, meta (unchanged) */
+  --line:         #E3E6E1;   /* hairline border (neutral light) */
+  --line-strong:  #C6CCC2;   /* stronger border on hover / dividers */
+  --green:        #D5FACC;   /* playful section background */
+  --accent:       #425EEB;   /* electric-blue accent (brand) */
+  --accent-deep:  #354BBC;   /* darker shade of the accent (hover) */
+  --accent-soft:  var(--green); /* soft highlight / selection */
   /* Back-compat aliases: the system references --orange* throughout, so every
-     former orange token and orange state now resolves to the indigo accent. */
+     former accent token and state now resolves to the electric-blue accent. */
   --orange:       var(--accent);
   --orange-deep:  var(--accent-deep);
-  --on-orange:    #FFFFFF;   /* text on the accent */
-  --footer-bg:    #14131A;   /* dark footer / dark bands */
-  --footer-ink:   #F1F0ED;
-  --footer-muted: rgba(241,240,237,.60);
-  --footer-line:  rgba(241,240,237,.16);
-  --error:        #B23A22;
+  --on-orange:    #FCFCFC;   /* text on the accent / on blue */
+  --footer-bg:    var(--green);   /* CTA bands + footer are mint-green sections */
+  --footer-ink:   #171719;        /* dark text on green */
+  --footer-muted: rgba(23,23,25,.62);
+  --footer-line:  rgba(23,23,25,.14);
+  --error:        #C62828;
   --ok:           #2E6B4F;
 
   /* Type */
@@ -197,11 +198,11 @@ p.tight { margin-top: .5rem; }
 .btn-orange { background: var(--orange); color: var(--on-orange); border-color: var(--orange); }
 .btn-orange:hover { background: var(--orange-deep); border-color: var(--orange-deep); }
 
-.btn-secondary { background: transparent; color: var(--ink); border-color: var(--ink); }
-.btn-secondary:hover { background: var(--ink); color: var(--paper); }
+.btn-secondary { background: transparent; color: var(--accent); border-color: var(--accent); }
+.btn-secondary:hover { background: var(--accent); color: var(--on-orange); }
 
-.section--dark .btn-secondary { color: var(--footer-ink); border-color: rgba(241,240,237,.4); }
-.section--dark .btn-secondary:hover { background: var(--footer-ink); color: var(--footer-bg); }
+.section--dark .btn-secondary { color: var(--accent); border-color: var(--accent); }
+.section--dark .btn-secondary:hover { background: var(--accent); color: var(--on-orange); }
 
 .btn-sm { padding: .8em 1.1em; font-size: .74rem; }
 .btn-block { width: 100%; justify-content: center; }
@@ -454,7 +455,7 @@ a.card:hover, .card--link:hover { transform: translateY(-3px); box-shadow: 0 16p
 
 /* ------- "How to explain it" box ----------------------------------------- */
 .explain {
-  border: 1px solid var(--ink);
+  border: 1px solid var(--accent);
   border-radius: var(--radius);
   background: var(--paper-2);
   padding: clamp(26px, 3vw, 40px);
@@ -582,10 +583,10 @@ a.card:hover, .card--link:hover { transform: translateY(-3px); box-shadow: 0 16p
 .footer__legal a, .footer__copy { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .06em; color: var(--footer-muted); text-transform: uppercase; }
 .footer__legal a:hover { color: var(--footer-ink); }
 .footer .langswitch a { color: var(--footer-muted); border-color: var(--footer-line); }
-.footer .langswitch a:hover { color: var(--footer-ink); border-color: rgba(241,240,237,.4); }
+.footer .langswitch a:hover { color: var(--footer-ink); border-color: rgba(23,23,25,.28); }
 .footer__social { display: flex; gap: 10px; }
 .footer__social a { display: inline-flex; width: 40px; height: 40px; align-items: center; justify-content: center; border: 1px solid var(--footer-line); border-radius: var(--radius); opacity: .8; }
-.footer__social a:hover { opacity: 1; border-color: rgba(241,240,237,.4); }
+.footer__social a:hover { opacity: 1; border-color: rgba(23,23,25,.28); }
 
 /* ------- Mobile menu panel ------------------------------------------------ */
 .mobile-panel {
