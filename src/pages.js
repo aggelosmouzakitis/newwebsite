@@ -461,7 +461,7 @@ function about(ctx) {
 
   const people = S(`<div class="people">
     ${person(t.founder, 'anastasia.jpg', false)}
-    ${person(t.circles, 'aggelos.jpg', true)}
+    ${person(t.circles, 'aggelos-portrait.jpg', true)}
   </div>`, { class: 'section--tight' });
 
   const finalCta = C.ctaBand(ctx, t.finalCta,

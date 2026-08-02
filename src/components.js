@@ -139,10 +139,6 @@ function footer(ctx) {
   const langA = `<a href="${attr(ctx.altUrl)}" data-lang-switch="${attr(ctx.altLang)}" hreflang="${attr(ctx.altLang)}">${e(ctx.altLangFull)}</a>`;
 
   return `<footer class="footer"><div class="container">
-    <div class="footer__cta">
-      <p class="h3">${e(t.ctaTitle)}</p>
-      ${cta}
-    </div>
     <div class="footer__main">
       <div class="footer__brand">
         <a class="brand" href="${attr(P.home)}">SOMO<span class="dot">.</span></a>

@@ -643,6 +643,8 @@ body.menu-open .mobile-panel { opacity: 1; visibility: visible; transform: trans
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 760px) {
+  .announce__msg { display: none; }
+  .announce__row { justify-content: center; }
   body { font-size: 16px; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .metagrid { grid-template-columns: 1fr 1fr; }

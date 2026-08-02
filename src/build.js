@@ -102,7 +102,7 @@ function copyAssets() {
   const imgDir = path.join(ROOT, 'assets', 'img');
   mkdirp(imgDir);
   // Real founder / facilitator photos, bundled with the source (src/media/*.jpg).
-  for (const photo of ['anastasia.jpg', 'aggelos.jpg']) {
+  for (const photo of ['anastasia.jpg', 'aggelos-portrait.jpg']) {
     const src = path.join(ROOT, 'src', 'media', photo);
     if (fs.existsSync(src)) fs.copyFileSync(src, path.join(imgDir, photo));
   }
