@@ -44,12 +44,12 @@ body{background:#FCFCFC;color:#171719;font-family:'Commissioner',sans-serif;
   padding:76px 80px;display:flex;flex-direction:column;justify-content:space-between;position:relative}
 .top{display:flex;align-items:center;justify-content:space-between}
 .brand{font-family:'Roboto Mono',monospace;font-weight:700;font-size:34px;letter-spacing:.02em}
-.brand .dot{color:#425EEB}
+.brand .dot{color:#5A6CD0}
 .badge{font-family:'Roboto Mono',monospace;font-size:20px;letter-spacing:.16em;text-transform:uppercase;color:#717078}
 .mid{max-width:1040px}
-.kicker{font-family:'Roboto Mono',monospace;font-size:24px;letter-spacing:.16em;text-transform:uppercase;color:#425EEB;font-weight:500;margin-bottom:26px}
+.kicker{font-family:'Roboto Mono',monospace;font-size:24px;letter-spacing:.16em;text-transform:uppercase;color:#5A6CD0;font-weight:500;margin-bottom:26px}
 .title{font-weight:750;letter-spacing:-.03em;line-height:1.0;font-size:${titleSize}px}
-.title .dot{color:#425EEB}
+.title .dot{color:#5A6CD0}
 .sub{margin-top:26px;font-size:30px;line-height:1.35;color:#45454B;max-width:900px;font-weight:400}
 .foot{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #E3E6E1;padding-top:26px}
 .foot .l,.foot .r{font-family:'Roboto Mono',monospace;font-size:20px;letter-spacing:.1em;text-transform:uppercase;color:#717078}
@@ -69,7 +69,7 @@ const faviconTemplate = (size) => `<!DOCTYPE html><html><head><meta charset="utf
 <style>*{margin:0;padding:0}html,body{width:${size}px;height:${size}px}
 body{background:#171719;display:flex;align-items:center;justify-content:center;position:relative}
 .s{font-family:'Commissioner',sans-serif;font-weight:800;font-size:${Math.round(size * 0.62)}px;color:#FCFCFC;line-height:1}
-.d{position:absolute;right:${Math.round(size * 0.2)}px;bottom:${Math.round(size * 0.29)}px;width:${Math.round(size * 0.12)}px;height:${Math.round(size * 0.12)}px;border-radius:50%;background:#425EEB}
+.d{position:absolute;right:${Math.round(size * 0.2)}px;bottom:${Math.round(size * 0.29)}px;width:${Math.round(size * 0.12)}px;height:${Math.round(size * 0.12)}px;border-radius:50%;background:#5A6CD0}
 </style></head><body><span class="s">S</span><span class="d"></span></body></html>`;
 
 const MODE = process.argv[2] || 'all'; // 'all' | 'og' | 'favicons'

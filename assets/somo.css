@@ -1,7 +1,7 @@
 /* =============================================================================
    SOMO — design system
    Editorial / human aesthetic: white background, mint-green section blocks,
-   one electric-blue accent, near-black ink, strong headings, monospace
+   one soft periwinkle-blue accent, near-black ink, strong headings, monospace
    labels/metadata, sharp 1px borders, bordered meta grids. Restrained motion.
 
    Typeface intent: Commissioner (navigation, buttons, headings, body, forms,
@@ -30,8 +30,8 @@ ul, ol { list-style: none; }
   --line:         #E3E6E1;   /* hairline border (neutral light) */
   --line-strong:  #C6CCC2;   /* stronger border on hover / dividers */
   --green:        #D5FACC;   /* playful section background */
-  --accent:       #425EEB;   /* electric-blue accent (brand) */
-  --accent-deep:  #354BBC;   /* darker shade of the accent (hover) */
+  --accent:       #5A6CD0;   /* soft periwinkle accent (brand) */
+  --accent-deep:  #45549F;   /* darker shade of the accent (hover) */
   --accent-soft:  var(--green); /* soft highlight / selection */
   /* Back-compat aliases: the system references --orange* throughout, so every
      former accent token and state now resolves to the electric-blue accent. */
