@@ -1,12 +1,13 @@
 /* =============================================================================
    SOMO — design system
-   Editorial / operator aesthetic: warm paper background, one vivid orange
-   accent, near-black ink, heavy grotesque headings, monospace labels, sharp
+   Editorial / human aesthetic: neutral stone background, one deep-indigo
+   accent, near-black ink, strong headings, monospace labels/metadata, sharp
    1px borders, bordered meta grids, a dark footer. Restrained motion.
 
-   Typeface intent: a heavy grotesque for display + a monospace for labels.
-   Inter (display/body) and Roboto Mono (labels) are loaded per page and both
-   carry Greek glyphs. Swap the families in :root and the <link> tags to change.
+   Typeface intent: Commissioner (navigation, buttons, headings, body, forms,
+   cards) + Roboto Mono (dates, step numbers, small labels, compact metadata).
+   Both carry Greek glyphs. Swap the families in :root and the <link> tags to
+   change; recolour by editing the accent tokens in :root.
    ========================================================================== */
 
 /* ------- Reset ------------------------------------------------------------ */
@@ -19,27 +20,32 @@ ul, ol { list-style: none; }
 
 /* ------- Tokens ----------------------------------------------------------- */
 :root {
-  /* Colour */
-  --paper:        #F2ECDF;   /* warm cream page background */
-  --paper-2:      #EBE3D2;   /* slightly deeper panel / card fill */
-  --paper-3:      #F7F2E8;   /* lifted card fill */
-  --ink:          #17130D;   /* warm near-black text */
-  --ink-2:        #4A4335;   /* secondary text */
-  --muted:        #6B6250;   /* labels, meta (>=4.5:1 on paper) */
-  --line:         #D6CBB4;   /* hairline border */
-  --line-strong:  #BFB294;   /* stronger border on hover / dividers */
-  --orange:       #E7500E;   /* single accent (brand) */
-  --orange-deep:  #C6420A;   /* accent hover */
-  --on-orange:    #FFFFFF;   /* text on orange */
-  --footer-bg:    #16120C;   /* dark footer / dark bands */
-  --footer-ink:   #EDE5D5;
-  --footer-muted: rgba(237,229,213,.60);
-  --footer-line:  rgba(237,229,213,.16);
+  /* Colour — neutral stone with a single deep-indigo accent */
+  --paper:        #F2F1ED;   /* stone page background */
+  --paper-2:      #E7E7E2;   /* slightly deeper panel / card fill */
+  --paper-3:      #FAF9F6;   /* lifted card fill */
+  --ink:          #171719;   /* near-black text */
+  --ink-2:        #45454B;   /* secondary text */
+  --muted:        #717078;   /* labels, meta */
+  --line:         #D2D1CC;   /* hairline border */
+  --line-strong:  #AAA9B0;   /* stronger border on hover / dividers */
+  --accent:       #4D478F;   /* indigo accent (brand) */
+  --accent-deep:  #38336D;   /* deep indigo (hover / emphasis) */
+  --accent-soft:  #DDD9F0;   /* soft indigo (restrained backgrounds / highlights) */
+  /* Back-compat aliases: the system references --orange* throughout, so every
+     former orange token and orange state now resolves to the indigo accent. */
+  --orange:       var(--accent);
+  --orange-deep:  var(--accent-deep);
+  --on-orange:    #FFFFFF;   /* text on the accent */
+  --footer-bg:    #14131A;   /* dark footer / dark bands */
+  --footer-ink:   #F1F0ED;
+  --footer-muted: rgba(241,240,237,.60);
+  --footer-line:  rgba(241,240,237,.16);
   --error:        #B23A22;
   --ok:           #2E6B4F;
 
   /* Type */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-sans: 'Commissioner', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   --font-mono: 'Roboto Mono', ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, monospace;
 
   /* Layout */
@@ -62,11 +68,10 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: ' cv05' 1, 'ss01' 1;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
-::selection { background: var(--ink); color: var(--paper); }
+::selection { background: var(--accent-soft); color: var(--ink); }
 
 a { text-decoration: none; }
 strong, b { font-weight: 600; }
@@ -109,7 +114,7 @@ strong, b { font-weight: 600; }
 .eyebrow {
   font-family: var(--font-mono);
   font-size: .74rem;
-  letter-spacing: .18em;
+  letter-spacing: .10em;
   text-transform: uppercase;
   color: var(--orange);
   font-weight: 500;
@@ -134,14 +139,14 @@ strong, b { font-weight: 600; }
 .wordmark .dot { color: var(--orange); }
 
 .display {
-  font-weight: 800;
+  font-weight: 750;
   letter-spacing: -.03em;
   line-height: 1.02;
   font-size: clamp(2.3rem, 5.6vw, 4.4rem);
 }
-h1, .h1 { font-weight: 800; letter-spacing: -.03em; line-height: 1.04; font-size: clamp(2.1rem, 4.8vw, 3.6rem); }
-h2, .h2 { font-weight: 800; letter-spacing: -.022em; line-height: 1.08; font-size: clamp(1.8rem, 3.4vw, 2.75rem); }
-h3, .h3 { font-weight: 700; letter-spacing: -.014em; line-height: 1.15; font-size: clamp(1.2rem, 2vw, 1.55rem); }
+h1, .h1 { font-weight: 750; letter-spacing: -.03em; line-height: 1.04; font-size: clamp(2.1rem, 4.8vw, 3.6rem); }
+h2, .h2 { font-weight: 700; letter-spacing: -.022em; line-height: 1.08; font-size: clamp(1.8rem, 3.4vw, 2.75rem); }
+h3, .h3 { font-weight: 650; letter-spacing: -.014em; line-height: 1.15; font-size: clamp(1.2rem, 2vw, 1.55rem); }
 h4, .h4 { font-weight: 700; letter-spacing: -.01em; line-height: 1.2; font-size: 1.08rem; }
 
 .lead { font-size: clamp(1.18rem, 2.2vw, 1.6rem); line-height: 1.45; font-weight: 400; color: var(--ink); letter-spacing: -.01em; }
@@ -172,8 +177,8 @@ p.tight { margin-top: .5rem; }
 /* ------- Buttons ---------------------------------------------------------- */
 .btn {
   display: inline-flex; align-items: center; gap: .6em;
-  font-family: var(--font-mono);
-  font-size: .8rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase;
+  font-family: var(--font-sans);
+  font-size: .82rem; font-weight: 600; letter-spacing: .03em; text-transform: uppercase;
   line-height: 1;
   padding: 1.05em 1.5em;
   border: 1px solid transparent;
@@ -186,8 +191,8 @@ p.tight { margin-top: .5rem; }
 .btn:hover .arrow { transform: translateX(3px); }
 .btn:active { transform: translateY(1px); }
 
-.btn-primary { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-.btn-primary:hover { background: var(--orange); border-color: var(--orange); color: var(--on-orange); }
+.btn-primary { background: var(--accent); color: var(--on-orange); border-color: var(--accent); }
+.btn-primary:hover { background: var(--accent-deep); border-color: var(--accent-deep); color: var(--on-orange); }
 
 .btn-orange { background: var(--orange); color: var(--on-orange); border-color: var(--orange); }
 .btn-orange:hover { background: var(--orange-deep); border-color: var(--orange-deep); }
@@ -195,7 +200,7 @@ p.tight { margin-top: .5rem; }
 .btn-secondary { background: transparent; color: var(--ink); border-color: var(--ink); }
 .btn-secondary:hover { background: var(--ink); color: var(--paper); }
 
-.section--dark .btn-secondary { color: var(--footer-ink); border-color: rgba(237,229,213,.4); }
+.section--dark .btn-secondary { color: var(--footer-ink); border-color: rgba(241,240,237,.4); }
 .section--dark .btn-secondary:hover { background: var(--footer-ink); color: var(--footer-bg); }
 
 .btn-sm { padding: .8em 1.1em; font-size: .74rem; }
@@ -204,8 +209,8 @@ p.tight { margin-top: .5rem; }
 /* Text link with arrow (secondary action) */
 .textlink {
   display: inline-flex; align-items: center; gap: .5em;
-  font-family: var(--font-mono); font-size: .82rem; letter-spacing: .04em;
-  text-transform: uppercase; color: var(--ink); font-weight: 500;
+  font-family: var(--font-sans); font-size: .82rem; letter-spacing: .03em;
+  text-transform: uppercase; color: var(--ink); font-weight: 600;
   border-bottom: 1px solid transparent; padding-bottom: 2px;
 }
 .textlink .arrow { transition: transform .16s var(--ease); }
@@ -230,11 +235,11 @@ p.tight { margin-top: .5rem; }
 .announce__link {
   display: inline-flex; align-items: center; gap: .5em;
   font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 500;
-  border: 1px solid rgba(251,244,234,.5); border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.5); border-radius: 999px;
   padding: .5em 1em; transition: background .16s var(--ease), border-color .16s var(--ease);
   white-space: nowrap;
 }
-.announce__link:hover { background: rgba(251,244,234,.14); border-color: var(--on-orange); }
+.announce__link:hover { background: rgba(255,255,255,.14); border-color: var(--on-orange); }
 .announce__link .arrow { transition: transform .16s var(--ease); }
 .announce__link:hover .arrow { transform: translateX(3px); }
 
@@ -260,8 +265,8 @@ p.tight { margin-top: .5rem; }
 .nav { display: flex; align-items: center; gap: 4px; }
 .nav__list { display: flex; align-items: center; gap: 2px; }
 .nav__link, .nav__toggle {
-  font-family: var(--font-mono); font-size: .76rem; letter-spacing: .1em; text-transform: uppercase;
-  color: var(--ink); font-weight: 500;
+  font-family: var(--font-sans); font-size: .78rem; letter-spacing: .05em; text-transform: uppercase;
+  color: var(--ink); font-weight: 600;
   padding: 10px 12px; border-radius: var(--radius);
   background: none; border: 0; cursor: pointer;
   display: inline-flex; align-items: center; gap: .4em;
@@ -400,9 +405,9 @@ a.card:hover, .card--link:hover { transform: translateY(-3px); box-shadow: 0 16p
   font-family: var(--font-mono); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase;
   color: var(--ink-2); font-weight: 500;
 }
-.kindtag .dot { width: 8px; height: 8px; border-radius: 999px; background: var(--orange); display: inline-block; }
-.kindtag.k-move .dot { background: #C6420A; }
-.kindtag.k-community .dot { background: #8A6D2F; }
+.kindtag .dot { width: 8px; height: 8px; border-radius: 999px; background: var(--accent); display: inline-block; }
+.kindtag.k-move .dot { background: var(--accent-deep); }
+.kindtag.k-community .dot { background: var(--muted); }
 
 /* Event card */
 .eventcard {
@@ -577,10 +582,10 @@ a.card:hover, .card--link:hover { transform: translateY(-3px); box-shadow: 0 16p
 .footer__legal a, .footer__copy { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .06em; color: var(--footer-muted); text-transform: uppercase; }
 .footer__legal a:hover { color: var(--footer-ink); }
 .footer .langswitch a { color: var(--footer-muted); border-color: var(--footer-line); }
-.footer .langswitch a:hover { color: var(--footer-ink); border-color: rgba(237,229,213,.4); }
+.footer .langswitch a:hover { color: var(--footer-ink); border-color: rgba(241,240,237,.4); }
 .footer__social { display: flex; gap: 10px; }
 .footer__social a { display: inline-flex; width: 40px; height: 40px; align-items: center; justify-content: center; border: 1px solid var(--footer-line); border-radius: var(--radius); opacity: .8; }
-.footer__social a:hover { opacity: 1; border-color: rgba(237,229,213,.4); }
+.footer__social a:hover { opacity: 1; border-color: rgba(241,240,237,.4); }
 
 /* ------- Mobile menu panel ------------------------------------------------ */
 .mobile-panel {

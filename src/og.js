@@ -18,7 +18,7 @@ const esc = (s) => String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').
 
 function ogContent(t, page) {
   switch (page) {
-    case 'home': return { kicker: t.home.hero.eyebrow, title: t.htmlLang === 'el' ? 'Μικρές ομαδικές εμπειρίες με το σώμα και την ομάδα' : 'Small group experiences for the body and the group', sub: '' };
+    case 'home': return { kicker: t.home.hero.eyebrow, title: t.htmlLang === 'el' ? 'Ομαδικές εμπειρίες που ξεκινούν από το σώμα' : 'Group experiences that start with the body', sub: '' };
     case 'circles': return { kicker: t.products.circles.kind, title: 'Somo Circles', sub: t.products.circles.oneLiner };
     case 'flow': return { kicker: t.products.flow.kind + ' · ' + t.common.soon, title: 'Somo Flow', sub: t.products.flow.oneLiner };
     case 'outdoors': return { kicker: t.products.outdoors.kind, title: 'Somo Outdoors', sub: t.products.outdoors.oneLiner };
@@ -31,7 +31,7 @@ function ogContent(t, page) {
   }
 }
 
-const FONTS = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Roboto+Mono:wght@400;500&display=swap';
+const FONTS = 'https://fonts.googleapis.com/css2?family=Commissioner:wght@400..800&family=Roboto+Mono:wght@400;500&display=swap';
 
 function ogTemplate(c, langLabel) {
   const titleSize = c.title.length > 34 ? 78 : (c.title.length > 18 ? 96 : 132);
@@ -40,19 +40,19 @@ function ogTemplate(c, langLabel) {
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:1200px;height:630px}
-body{background:#F2ECDF;color:#17130D;font-family:'Inter',sans-serif;
+body{background:#F2F1ED;color:#171719;font-family:'Commissioner',sans-serif;
   padding:76px 80px;display:flex;flex-direction:column;justify-content:space-between;position:relative}
 .top{display:flex;align-items:center;justify-content:space-between}
 .brand{font-family:'Roboto Mono',monospace;font-weight:700;font-size:34px;letter-spacing:.02em}
-.brand .dot{color:#E7500E}
-.badge{font-family:'Roboto Mono',monospace;font-size:20px;letter-spacing:.16em;text-transform:uppercase;color:#6B6250}
+.brand .dot{color:#4D478F}
+.badge{font-family:'Roboto Mono',monospace;font-size:20px;letter-spacing:.16em;text-transform:uppercase;color:#717078}
 .mid{max-width:1040px}
-.kicker{font-family:'Roboto Mono',monospace;font-size:24px;letter-spacing:.16em;text-transform:uppercase;color:#E7500E;font-weight:500;margin-bottom:26px}
-.title{font-weight:800;letter-spacing:-.03em;line-height:1.0;font-size:${titleSize}px}
-.title .dot{color:#E7500E}
-.sub{margin-top:26px;font-size:30px;line-height:1.35;color:#4A4335;max-width:900px;font-weight:400}
-.foot{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #CDBFA2;padding-top:26px}
-.foot .l,.foot .r{font-family:'Roboto Mono',monospace;font-size:20px;letter-spacing:.1em;text-transform:uppercase;color:#6B6250}
+.kicker{font-family:'Roboto Mono',monospace;font-size:24px;letter-spacing:.16em;text-transform:uppercase;color:#4D478F;font-weight:500;margin-bottom:26px}
+.title{font-weight:750;letter-spacing:-.03em;line-height:1.0;font-size:${titleSize}px}
+.title .dot{color:#4D478F}
+.sub{margin-top:26px;font-size:30px;line-height:1.35;color:#45454B;max-width:900px;font-weight:400}
+.foot{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #D2D1CC;padding-top:26px}
+.foot .l,.foot .r{font-family:'Roboto Mono',monospace;font-size:20px;letter-spacing:.1em;text-transform:uppercase;color:#717078}
 </style></head><body>
 <div class="top"><div class="brand">SOMO<span class="dot">.</span></div><div class="badge">${esc(langLabel)}</div></div>
 <div class="mid">
@@ -67,9 +67,9 @@ body{background:#F2ECDF;color:#17130D;font-family:'Inter',sans-serif;
 const faviconTemplate = (size) => `<!DOCTYPE html><html><head><meta charset="utf-8">
 <link rel="stylesheet" href="${FONTS}">
 <style>*{margin:0;padding:0}html,body{width:${size}px;height:${size}px}
-body{background:#17130D;display:flex;align-items:center;justify-content:center;position:relative}
-.s{font-family:'Inter',sans-serif;font-weight:800;font-size:${Math.round(size * 0.62)}px;color:#F2ECDF;line-height:1}
-.d{position:absolute;right:${Math.round(size * 0.2)}px;bottom:${Math.round(size * 0.29)}px;width:${Math.round(size * 0.12)}px;height:${Math.round(size * 0.12)}px;border-radius:50%;background:#E7500E}
+body{background:#171719;display:flex;align-items:center;justify-content:center;position:relative}
+.s{font-family:'Commissioner',sans-serif;font-weight:800;font-size:${Math.round(size * 0.62)}px;color:#F2F1ED;line-height:1}
+.d{position:absolute;right:${Math.round(size * 0.2)}px;bottom:${Math.round(size * 0.29)}px;width:${Math.round(size * 0.12)}px;height:${Math.round(size * 0.12)}px;border-radius:50%;background:#4D478F}
 </style></head><body><span class="s">S</span><span class="d"></span></body></html>`;
 
 const MODE = process.argv[2] || 'all'; // 'all' | 'og' | 'favicons'

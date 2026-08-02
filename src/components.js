@@ -339,14 +339,14 @@ function layout(ctx, head, bodyHtml) {
 ${analyticsSnippet}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Roboto+Mono:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Roboto+Mono:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Roboto+Mono:wght@400;500;600;700&display=swap"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400..800&family=Roboto+Mono:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400..800&family=Roboto+Mono:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400..800&family=Roboto+Mono:wght@400;500;600;700&display=swap"></noscript>
 <link rel="stylesheet" href="${config.basePath}/assets/somo.css">
 <link rel="icon" href="${config.basePath}/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="${config.basePath}/assets/img/favicon.png" sizes="48x48">
 <link rel="apple-touch-icon" href="${config.basePath}/assets/img/apple-touch-icon.png">
-<meta name="theme-color" content="#F2ECDF">
+<meta name="theme-color" content="#F2F1ED">
 <title>${e(head.title)}</title>
 <meta name="description" content="${attr(head.description)}">
 <link rel="canonical" href="${attr(ctx.canonical)}">

@@ -377,12 +377,6 @@ function organisations(ctx) {
     <div class="card"><p class="label">${e(t.teams.listLabel)}</p><div class="prose" style="margin-top:14px">${bullets(t.teams.points)}</div></div>
   </div>`, { class: 'section--tight' });
 
-  const studios = S(`<div class="split">
-    <div class="card"><p class="label">${e(t.studios.listLabel)}</p><div class="prose" style="margin-top:14px">${bullets(t.studios.points)}</div></div>
-    <div><p class="eyebrow">${e(t.studios.eyebrow)}</p><h2 class="h2" style="margin-top:16px">${e(t.studios.title)}</h2>
-      <div class="prose" style="margin-top:18px">${t.studios.body.map((p) => `<p>${e(p)}</p>`).join('')}</div></div>
-  </div>`, { class: 'section--tight' });
-
   const process = S(
     C.sectionHead({ eyebrow: t.process.eyebrow, title: t.process.title })
     + C.stepList(t.process.steps));
@@ -435,7 +429,7 @@ function organisations(ctx) {
   const finalCta = C.ctaBand(ctx, t.finalCta,
     C.ctaLink('#contact', t.finalCta.cta, { class: 'btn btn-orange', analytics: 'organisation_form_start', placement: 'orgs_final' }));
 
-  return hero + rule() + adapt + teams + studios + rule() + process + contactForm + finalCta;
+  return hero + rule() + adapt + teams + rule() + process + contactForm + finalCta;
 }
 
 /* ============================ ABOUT ====================================== */

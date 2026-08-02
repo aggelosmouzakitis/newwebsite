@@ -61,8 +61,8 @@ function orgNode(siteUrl, t, lang) {
       '@type': 'Person',
       name: lang === 'el' ? 'Άγγελος Μουζακίτης' : 'Aggelos Mouzakitis',
       jobTitle: lang === 'el'
-        ? 'Ψυχοθεραπευτής ενσωματωτικής προσέγγισης, συντονιστής ομάδων'
-        : 'Integrative psychotherapist and facilitator',
+        ? 'Σύμβουλος ψυχικής υγείας, συντονιστής ομάδων'
+        : 'Mental health counsellor and group facilitator',
     },
   };
   const sameAs = Object.values(config.social).filter(Boolean);
@@ -107,7 +107,7 @@ function copyAssets() {
   const src = path.join(ROOT, 'src', 'media', 'aggelos.jpg');
   if (fs.existsSync(src)) fs.copyFileSync(src, path.join(imgDir, 'aggelos.jpg'));
   // Brand favicon (SVG). PNG variants are produced by scripts/og.js.
-  const favicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><rect width="48" height="48" rx="9" fill="#17130D"/><text x="24" y="34" font-family="Inter,Arial,sans-serif" font-size="30" font-weight="800" fill="#F2ECDF" text-anchor="middle">S</text><circle cx="37" cy="31" r="3.4" fill="#E7500E"/></svg>`;
+  const favicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><rect width="48" height="48" rx="9" fill="#171719"/><text x="24" y="34" font-family="Commissioner,Arial,sans-serif" font-size="30" font-weight="800" fill="#F2F1ED" text-anchor="middle">S</text><circle cx="37" cy="31" r="3.4" fill="#4D478F"/></svg>`;
   fs.writeFileSync(path.join(imgDir, 'favicon.svg'), favicon);
 }
 
