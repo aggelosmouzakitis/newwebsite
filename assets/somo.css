@@ -457,7 +457,13 @@ a.card:hover, .card--link:hover { transform: translateY(-3px); box-shadow: 0 16p
 .numgrid.cols-4 { grid-template-columns: repeat(4, 1fr); }
 .numgrid__cell { padding: clamp(22px,2.4vw,30px) clamp(16px,2vw,26px); border-left: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .numgrid__cell:nth-child(2n+1) { border-left: 0; padding-left: 0; }
-.numgrid.cols-4 .numgrid__cell:nth-child(n) { }
+/* 4-column numgrid: a divider before every column except the first of each row
+   (the base :nth-child(2n+1) rule is for the 2-column layout and would drop the
+   divider before column 3). */
+@media (min-width: 761px) {
+  .numgrid.cols-4 .numgrid__cell:nth-child(2n+1) { border-left: 1px solid var(--line); padding-left: clamp(16px,2vw,26px); }
+  .numgrid.cols-4 .numgrid__cell:nth-child(4n+1) { border-left: 0; padding-left: 0; }
+}
 .numgrid__i { font-family: var(--font-mono); font-size: .8rem; letter-spacing: .08em; color: var(--orange); font-weight: 500; }
 .numgrid__t { margin-top: 14px; font-weight: 700; font-size: 1.12rem; letter-spacing: -.01em; }
 .numgrid__d { margin-top: 8px; color: var(--ink-2); font-size: .96rem; }
